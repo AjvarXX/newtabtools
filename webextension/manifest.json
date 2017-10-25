@@ -21,7 +21,14 @@
 		]
 	},
 	"browser_action": {
-		"default_icon": "images/tools.svg",
+		"default_icon": {
+			"16": "images/tools16.png",
+			"24": "images/tools24.png",
+			"32": "images/tools32.png",
+			"48": "images/tools48.png",
+			"64": "images/tools64.png",
+			"96": "images/tools96.png"
+		},
 		"default_popup": "action.html",
 		"default_title": "__MSG_extensionName__",
 		"browser_style": true

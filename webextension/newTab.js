@@ -855,6 +855,9 @@ var newTabTools = {
 			// Forget about visiting this page. It shouldn't be in the history.
 			// Maybe if bug 1322304 is ever fixed we could remove this.
 			chrome.history.deleteUrl({ url: location.href });
+			chrome.tabs.query({active: true, currentWindow: true}, tabs => {
+				chrome.browserAction.disable(tabs[0].tabId);
+			});
 
 			newTabTools.updateText.textContent = newTabTools.getString('newversion', Prefs.version);
 			newTabTools.updateNotice.dataset.version = Prefs.version;
